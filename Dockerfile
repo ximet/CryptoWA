@@ -4,6 +4,7 @@ MAINTAINER ximet <dq.ximet@gmail.com>
 #--------------------Setting Ubuntu------------------------
 RUN apt-get update && \
     apt-get install -y git && \
+	apt-get install -y apt-utils \
     apt-get install -y build-essential && \
     apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
@@ -26,10 +27,10 @@ ENV PATH /binaryen/bin/:/node:/emsdk_portable:/emsdk_portable/clang/fastcomp/bui
 	/node/out/Release/:/sexpr-wasm-prototype/out/:/usr/local/sbin:/usr/local/bin:\
 	/usr/sbin:/usr/bin:/sbin:/bin
 
-
-# ------------------------- binaryen ------------------------------------------
-RUN git clone https://github.com/WebAssembly/binaryen.git
-RUN cd /binaryen && cmake . && make
-
-
-LABEL version=1.0
+# ---------------------------- run --------------------------------------------
+WORKDIR /src
+ENTRYPOINT cd /build && \
+	emcc /src/example.c -s BINARYEN=1 -O0 -s ONLY_MY_CODE=1 -o index.js && \
+	sexpr-wasm /build/index.wast -o /build/example.wasm && \
+	/node/out/Release/node --expose-wasm /src/index.js && \
+	chmod ugo+rw *
