@@ -25,5 +25,11 @@ ENV PATH /binaryen/bin/:/node:/emsdk_portable:/emsdk_portable/clang/fastcomp/bui
 	/emsdk_portable/node/4.1.1_64bit/bin:/emsdk_portable/emscripten/incoming:\
 	/node/out/Release/:/sexpr-wasm-prototype/out/:/usr/local/sbin:/usr/local/bin:\
 	/usr/sbin:/usr/bin:/sbin:/bin
-    
+
+
+# ------------------------- binaryen ------------------------------------------
+RUN git clone https://github.com/WebAssembly/binaryen.git
+RUN cd /binaryen && cmake . && make
+
+
 LABEL version=1.0
