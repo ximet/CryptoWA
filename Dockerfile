@@ -3,22 +3,22 @@ MAINTAINER ximet <dq.ximet@gmail.com>
 
 #--------------------Setting Ubuntu------------------------
 RUN apt-get update && \
-    apt-get install -y git && \
-	apt-get install -y apt-utils \
-    apt-get install -y build-essential && \
     apt-get install -y curl && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get install -y nodejs && \
+    apt-get install -y build-essential && \
     apt-get install -y python2.7 && \
     npm config set python /usr/bin/python2.7 && \
-    apt-get install -y cmake && \
+    apt-get install -y git && \
+	apt-get install -y cmake && \
     apt-get install -y clang && \
     apt-get install -y wget && \
+    apt-get install -y awscli
 
 # ------------------------ emscripten -----------------------------------------
 RUN wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
 RUN tar -xvf emsdk-portable.tar.gz
-RUN cd /emsdk_portable && \
+RUN cd ./emsdk_portable && \
 	./emsdk update && \
 	./emsdk install sdk-incoming-64bit && \
 	./emsdk activate sdk-incoming-64bit
