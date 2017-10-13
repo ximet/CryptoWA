@@ -18,7 +18,7 @@ RUN apt-get update && \
 # ------------------------ emscripten -----------------------------------------
 RUN wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
 RUN tar -xvf emsdk-portable.tar.gz
-RUN cd ./emsdk_portable && \
+RUN cd ./emsdk-portable && \
 	./emsdk update && \
 	./emsdk install sdk-incoming-64bit && \
 	./emsdk activate sdk-incoming-64bit
