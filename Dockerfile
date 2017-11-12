@@ -3,6 +3,8 @@ MAINTAINER ximet <dq.ximet@gmail.com>
 
 WORKDIR /usr/local/emsdk-portable
 
+COPY src src/ 
+
 RUN apt-get update && \
     apt-get install -y wget && \
     apt-get install -y python && \
