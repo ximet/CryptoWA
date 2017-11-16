@@ -16,8 +16,11 @@ RUN (cd /tmp \
 RUN ./emsdk update && ./emsdk install latest && ./emsdk activate latest
 
 # RUN /bin/bash -c "source ./emsdk_env.sh"
+# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# RUN source ./emsdk_env.sh
+# ENV PATH "$PATH:/usr/local/emsdk-portable/emscripten/1.37.22"
 
-ENV PATH "$PATH:/usr/local/emsdk-portable/emscripten/1.37.22"
-
+RUN ./emsdk construct_env
+RUN cat emsdk_set_env.sh >> /etc/environment
 
 WORKDIR /src
