@@ -15,12 +15,9 @@ RUN (cd /tmp \
  && tar zxf emsdk-portable.tar.gz -C /usr/local)
 RUN ./emsdk update && ./emsdk install latest && ./emsdk activate latest
 
-# RUN /bin/bash -c "source ./emsdk_env.sh"
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-# RUN source ./emsdk_env.sh
-# ENV PATH "$PATH:/usr/local/emsdk-portable/emscripten/1.37.22"
 
-RUN ./emsdk construct_env
-RUN cat emsdk_set_env.sh >> /etc/environment
+RUN ver=$(tail -n 1 emscripten-tags.txt)
+RUN echo $ver
+ENV PATH "$PATH:/usr/local/emsdk-portable/emscripten/"$ver;
 
 WORKDIR /src
