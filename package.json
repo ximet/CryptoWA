@@ -1,0 +1,27 @@
+{
+  "name": "crypto-wa",
+  "version": "1.0.0",
+  "description": "crypto, wasm, cryptography",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ximet/crypto-wa.git"
+  },
+  "keywords": [
+    "crypto",
+    "wasm",
+    "cryptography"
+  ],
+  "author": "XIMet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ximet/crypto-wa/issues"
+  },
+  "homepage": "https://github.com/ximet/crypto-wa#readme",
+  "devDependencies": {
+    "wasm-loader": "^1.1.0"
+  }
+}

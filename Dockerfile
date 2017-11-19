@@ -34,4 +34,4 @@ ENV PATH "$PATH:/usr/local/emsdk-portable/emscripten/1.37.22"
 # # next command working only in container
 # RUN sed 's/^/export /' /etc/environment > /tmp/env.sh && . /tmp/env.sh 
 
-WORKDIR /src
+WORKDIR /source
