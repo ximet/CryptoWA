@@ -1,7 +1,7 @@
 {
   "name": "crypto-wa",
   "version": "1.0.0",
-  "description": "crypto, wasm, cryptography",
+  "description": "crypto-wasm library for web",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
