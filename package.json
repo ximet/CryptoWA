@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ximet/crypto-wa#readme",
   "devDependencies": {
-    "wasm-loader": "^1.1.0"
+    "wasm-loader": "^1.1.0",
+    "webpack": "^3.8.1"
   }
 }

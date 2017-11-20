@@ -1,8 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HappyPack = require('happypack');
-const WebpackMonitor = require('webpack-monitor');
 
 module.exports = {
     entry: [
