@@ -1,4 +1,4 @@
-int counter = 100;
+int counter = 23;
 
 int count() {  
     counter += 1;
