@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: [
-        './src/index.js',
+        path.join(__dirname, './src/index.js'),
     ],
     devtool: 'soource-map',
 
